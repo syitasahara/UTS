@@ -394,7 +394,7 @@ footer {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                    <button type="button" class="btn btn-primary">Iya</button>
+                    <button type="button" onclick="kirimWA()" class="btn btn-primary">Iya</button>
                 </div>
             </div>
         </div>
@@ -419,6 +419,17 @@ footer {
         let textarea = document.getElementById("pesan");
         textarea.value = '';
         textarea.value += `${productName} - ${productPrice} - ${productDescription}`;
+    }
+
+    function kirimWA() {
+        var nama = document.getElementById("nama").value;
+        var email= document.getElementById("email").value;
+        var pesan = document.getElementById("pesan").value;
+
+        var url = "https://api.whatsapp.com/send/?phone=6281585616615&text=Halo kak dengan Mega Daily. Saya " + nama + " mau konfirmasi pesanan " + pesan + ". Terima kasih kak, have a good time!";
+
+        location.href = url;
+        
     }
 </script>
 </html>
